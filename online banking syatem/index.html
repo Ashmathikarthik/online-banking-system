@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modern Online Banking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Bank</h1>
+      <button id="toggleTheme">🌙</button>
+    </header>
+
+    <div id="loginSection">
+      <input type="text" id="username" placeholder="Enter Name to Login" />
+      <button onclick="loginUser()">Login</button>
+    </div>
+
+    <div id="bankingSection" style="display: none;">
+      <h2>Welcome, <span id="displayName"></span></h2>
+      <div class="balance">💰 Balance: ₹<span id="balance">0</span></div>
+
+      <div class="actions">
+        <input type="number" id="depositAmount" placeholder="Deposit ₹" />
+        <button onclick="deposit()">Deposit</button>
+
+        <input type="number" id="withdrawAmount" placeholder="Withdraw ₹" />
+        <button onclick="withdraw()">Withdraw</button>
+
+        <input type="text" id="transferTo" placeholder="Transfer to (Name)" />
+        <input type="number" id="transferAmount" placeholder="₹ Amount" />
+        <button onclick="transfer()">Transfer</button>
+      </div>
+
+      <h3>📜 Transaction History</h3>
+      <ul id="historyList"></ul>
+
+      <h3>📊 Balance Usage</h3>
+      <canvas id="pieChart" width="300" height="300"></canvas>
+    </div>
+
+    <div id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
